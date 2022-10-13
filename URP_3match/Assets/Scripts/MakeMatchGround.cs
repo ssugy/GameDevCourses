@@ -37,7 +37,7 @@ public class MakeMatchGround : MonoBehaviour
                 Vector2 iconPos = startPos + new Vector2(i, j) * (cellSize);
                 GameObject icon = Instantiate(matchIcons[Random.Range(0, matchIcons.Length)], groundAnchor.transform, false);
                 icon.GetComponent<RectTransform>().localPosition = iconPos;
-                icon.name += $"{i} {j}";
+                icon.name = $"{i}_{j}_{icon.name}";
                 print(iconPos);
             }
         }
