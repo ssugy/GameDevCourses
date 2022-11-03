@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Net;
 using Game.Packet;
+
 public delegate void Do();
 public delegate void DoIF4(int id, float x, float y, float z);
 
@@ -46,6 +47,8 @@ public class P2pClient : MonoBehaviour
         clinetSock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         IPEndPoint ip = new IPEndPoint(IPAddress.Parse(IP), port);
         clinetSock.Connect(ip);
+        
+        // 큐브 2개 만들기.
         GameObject tmp = Resources.Load<GameObject>("Cube");
         if (tmp != null)
         {
@@ -145,6 +148,8 @@ public class P2pClient : MonoBehaviour
                         byte[] _x = new byte[4];
                         byte[] _y = new byte[4];
                         byte[] _z = new byte[4];
+
+                        // id가 8바이트 long인경우에는 어떻게 되나요? 2 10 14 18
                         Array.Copy(data, 2, _id, 0, _id.Length);
                         Array.Copy(data, 6,  _x, 0, _x.Length);
                         Array.Copy(data, 10, _y, 0, _y.Length);
@@ -171,7 +176,7 @@ public class P2pClient : MonoBehaviour
                             newData.charMove.xPos = x;
                             newData.charMove.yPos = y;
                             newData.charMove.zPos = z;
-                            newData.doMove = MoveCharacter;
+                            newData.doMove = MoveCharacter; // 이거 언제 실행되요? 코드 몇 번째 줄에서 실행되나요?
                             doList.Add(id, newData);
                         }
                     }
