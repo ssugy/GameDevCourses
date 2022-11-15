@@ -4,8 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/1115_WebView.unity
-    guid: fd3348f6a7fb0ff4bab8a3bb9abc635f
+  m_Scenes: []
   m_configObjects: {}
