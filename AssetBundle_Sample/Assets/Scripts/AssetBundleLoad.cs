@@ -57,6 +57,7 @@ public class AssetBundleLoad : MonoBehaviour
             var myLoadAssetbundle = AssetBundle.LoadFromFile(fullPath);  // 저장한 바이트배열을 에셋번들 형태로 load
 
             GameObject[] prefabs = myLoadAssetbundle.LoadAllAssets<GameObject>();
+            //GameObject prefabs2 = myLoadAssetbundle.LoadAsset<GameObject>("cube");
             foreach (GameObject item in prefabs)
             {
                 GameObject obj = Instantiate<GameObject>(item);
