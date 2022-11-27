@@ -1,0 +1,9 @@
+{
+   "Name" : "홍길동",
+   "Age" : "24",
+   "Man" : true,
+   "JobInfo" : {
+      "class" : "의적",
+      "Job" : "선비"
+   }
+}
