@@ -42,10 +42,4 @@ public class JsonExample_1 : MonoBehaviour
             Debug.Log(mobList[i].NAME);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
